@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Success!</h2>
+    {% if user.is_authenticated %}
+        <p>You are logged in as {{ user.email }} </p>
+        {% if user.last_login %}
+            <p>Your last login was {{ user.last_login }}</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

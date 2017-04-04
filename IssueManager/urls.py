@@ -20,7 +20,10 @@ from home import views as home_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home_views.get_index),
+    url(r'^$', home_views.get_index, name='index'),
     url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^register/$', accounts_views.register, name='register'),
+    url(r'^profile/$', accounts_views.profile, name='profile'),
+    url(r'^login/$', accounts_views.login, name='login'),
+    url(r'^logout/$', accounts_views.logout, name='logout'),
 ]
