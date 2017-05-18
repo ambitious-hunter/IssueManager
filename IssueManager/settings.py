@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'django_forms_bootstrap',
+    'disqus',
     'home',
     'accounts',
+    'tickets',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +134,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+DISQUS_API_KEY = '2eEsGL3BeREMdz2b10IMFltyadCvqHx0N56TStArCBbWWf5k8Kdtv4PxrdP4UBDV'
+DISQUS_WEBSITE_SHORTNAME = 'IssueManager'

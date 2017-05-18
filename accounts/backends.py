@@ -1,7 +1,12 @@
-from models import User
+from django.conf import settings
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 class EmailAuth(object):
+
     def authenticate(self, email=None, password=None):
         """
        Get an instance of User using the supplied email and check its password

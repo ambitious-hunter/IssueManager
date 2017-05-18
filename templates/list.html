@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="page-header">Current Bug list</h1>
+    <table>
+        <thead>
+        <tr>
+            <td>Title</td>
+            <td>Ticket Type</td>
+            <td>Created Date</td>
+            <td>Author</td>
+            <td>Status</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for bug in bugs %}
+            <tr>
+                <td><a href={{ bug.id }}>{{ bug.title }}</a></td>
+                <td>{{ bug.issue_type }}</td>
+                <td>{{ bug.published_date|date }}</td>
+                <td>{{ bug.author }}</td>
+                <td>{{ bug.status }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan=4>No tickets yet.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

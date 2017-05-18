@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <h3 style="text-indent: 10px;"><b>{{ bug.issue_type }}{{ bug.id }}</b> - {{ bug.title }}</h3>
+        <hr>
+        <div class="col-xs-3" style="float: right;">
+            <h4>Dates</h4>
+            <div style="text-indent: 10px;">
+                <p>
+                    <b>Created Date:</b>
+                    {{ bug.published_date }}</p>
+                <p>
+                    <b>Last Update:</b>
+                    {{ bug.updated_date }}</p>
+            </div>
+            <hr>
+            <h4>People</h4>
+            <div style="text-indent: 10px;">
+                <p>
+                    <b>Views:</b>
+                    {{ bug.views }}</p>
+            </div>
+            <hr>
+            <h4>Info</h4>
+            <div style="text-indent: 10px;">
+                <p>
+                    <bold>Author:</bold>
+                    {{ bug.author }}</p>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-9">
+            <div class="row">
+                <div class="col-xs-12">
+                    {% if bug.image %}
+                        <img src="/media/{{ bug.image }}">
+                    {% endif %}
+                    <h4>Details</h4>
+                    <div class="row" style="text-indent: 10px;">
+                        <div class="col-xs-6">
+                            <p><b>Status</b>: {{ bug.status }}</p>
+{#                            <p><b>Tags</b>: {{ bug.tag }}</p>#}
+                        </div>
+                        <div class="col-xs-6">
+                            <p><b>ID</b>: {{ bug.id }}</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-default" onclick="location.href='edit'">Edit</button>
+
+                    <hr>
+                    <h4>Description</h4>
+                    <div style="text-indent: 10px;">
+                        <p>{{ bug.text }}</p>
+                    </div>
+                    <hr>
+                    <h4>Discussion</h4>
+                    {% load disqus_tags %}
+                    {% set_disqus_title bug.title %}
+                    {% disqus_show_comments %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

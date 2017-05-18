@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import views as accounts_views
 from home import views as home_views
+from tickets import views as ticket_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,4 +27,5 @@ urlpatterns = [
     url(r'^profile/$', accounts_views.profile, name='profile'),
     url(r'^login/$', accounts_views.login, name='login'),
     url(r'^logout/$', accounts_views.logout, name='logout'),
+    url(r'', include('tickets.urls')),
 ]

@@ -11,6 +11,9 @@ body {
     background-color: #222;
 }
 
+.container{
+    width: auto;
+}
 @media(min-width:768px) {
     body {
         margin-top: 50px;
@@ -40,6 +43,9 @@ body {
 
     #page-wrapper {
         padding: 10px;
+    }
+    .container {
+        width:100%;
     }
 }
 
@@ -225,4 +231,26 @@ ul.alert-dropdown {
 
 .panel-yellow > a:hover {
     color: #df8a13;
+}
+
+
+/*Bugs and Requests*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td:first-child {
+    width: 60%;
+}
+
+thead {
+    background-color:lightblue;
+    font-weight:bold;
 }

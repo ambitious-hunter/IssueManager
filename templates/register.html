@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
+    <h1 class="page-header">Create a new account</h1>
     <form role="form" method="post" action="{% url 'register' %}">
-        <legend>Create a new account</legend>
+{#        <legend>Create a new account</legend>#}
         {% csrf_token %}
         {{ form| as_bootstrap }}
         <div class="form-group">
