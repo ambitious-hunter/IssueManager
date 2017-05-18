@@ -3,7 +3,7 @@
     <div class="row">
         <h3 style="text-indent: 10px;"><b>{{ bug.issue_type }}{{ bug.id }}</b> - {{ bug.title }}</h3>
         <hr>
-        <div class="col-xs-3" style="float: right;">
+        <div style="float: right; width: auto;">
             <h4>Dates</h4>
             <div style="text-indent: 10px;">
                 <p>
@@ -17,15 +17,16 @@
             <h4>People</h4>
             <div style="text-indent: 10px;">
                 <p>
-                    <b>Views:</b>
-                    {{ bug.views }}</p>
+                    <b>Author:</b>
+                    {{ bug.author }}</p>
             </div>
             <hr>
             <h4>Info</h4>
             <div style="text-indent: 10px;">
                 <p>
-                    <bold>Author:</bold>
-                    {{ bug.author }}</p>
+
+                    <b>Views:</b>
+                    {{ bug.views }}</p>
             </div>
         </div>
         <div class="col-md-10 col-md-9">
@@ -38,7 +39,7 @@
                     <div class="row" style="text-indent: 10px;">
                         <div class="col-xs-6">
                             <p><b>Status</b>: {{ bug.status }}</p>
-{#                            <p><b>Tags</b>: {{ bug.tag }}</p>#}
+                            {#                            <p><b>Tags</b>: {{ bug.tag }}</p>#}
                         </div>
                         <div class="col-xs-6">
                             <p><b>ID</b>: {{ bug.id }}</p>
