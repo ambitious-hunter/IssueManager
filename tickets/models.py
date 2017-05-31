@@ -5,11 +5,9 @@ from django.db import models
 from django.utils import timezone
 
 BUG_STATUS = (
-    ('Open', 'Open'),
-    ('In Progress', 'In Progress'),
-    ('Delivered', 'Delivered'),
-    ('Fixed', 'Fixed'),
-    ('Closed', 'Closed'),
+    ('To Do', 'To Do'),
+    ('Doing', 'Doing'),
+    ('Done', 'Done'),
 )
 
 BUG_TYPE = {
@@ -23,7 +21,7 @@ class Bug(models.Model):
     text = models.TextField()
     published_date = models.DateTimeField(blank=True, null=True)
     updated_date = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=20, choices=BUG_STATUS, default='Open')
+    status = models.CharField(max_length=20, choices=BUG_STATUS, default='To Do')
     author = models.ForeignKey('accounts.User')
     views = models.IntegerField(default=0)
     issue_type = models.CharField(max_length=10, choices=BUG_TYPE, default='Bug')
@@ -39,3 +37,6 @@ class Bug(models.Model):
         #     db_table = 'bugs'
 
         # Create your models here.
+
+
+# class Feature(Bug):

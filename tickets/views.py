@@ -45,7 +45,7 @@ def new_feature(request):
             return redirect(bug_detail, bug.pk)
     else:
         form = BugPostForm
-    return render(request, 'new_bug.html', {'form': form})
+    return render(request, 'new_feature.html', {'form': form})
 
 
 def edit_bug(request, id):

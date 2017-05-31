@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'django_forms_bootstrap',
+    'paypal.standard.ipn',
     'disqus',
     'home',
     'accounts',
@@ -137,3 +138,9 @@ STATICFILES_DIRS = (
 
 DISQUS_API_KEY = '2eEsGL3BeREMdz2b10IMFltyadCvqHx0N56TStArCBbWWf5k8Kdtv4PxrdP4UBDV'
 DISQUS_WEBSITE_SHORTNAME = 'IssueManager'
+
+# PayPal Settings
+SITE_URL = 'http://127.0.0.1:8000'
+PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+PAYPAL_RECEIVER_EMAIL = '<anatarutina@hotmail.com>'
+
