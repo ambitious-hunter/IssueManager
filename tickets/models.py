@@ -39,4 +39,14 @@ class Bug(models.Model):
         # Create your models here.
 
 
-# class Feature(Bug):
+class Feature(Bug):
+
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def publish(self):
+        self.updated_date = timezone.now()
+        self.issue_type = 'Feature'
+        self.save()
+
+    def __unicode__(self):
+        return self.title

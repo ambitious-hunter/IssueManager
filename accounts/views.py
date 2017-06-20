@@ -19,7 +19,7 @@ def register(request):
                 return redirect(reverse('profile'))
 
             else:
-                messages.error(request, "unable to log you in at this time!")
+                messages.error(request, "Unable to log you in at this time!")
 
     else:
         form = UserRegistrationForm()

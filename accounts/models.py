@@ -24,7 +24,6 @@ class AccountUserManager(UserManager):
 
         return user
 
-
 class User(AbstractUser):
     # now that we've abstracted this class we can add any
     # number of custom attribute to our user class

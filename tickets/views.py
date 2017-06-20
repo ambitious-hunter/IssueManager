@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 from .models import Bug
 from .forms import BugPostForm
@@ -61,3 +62,9 @@ def edit_bug(request, id):
     else:
         form = BugPostForm(instance=bug)
     return render(request, 'edit_bug.html', {'form': form})
+
+
+@csrf_exempt
+def withdraw_feature_request(request, id):
+    args = {'big': request.POST, 'get': request.GET}
+    return render(request, 'withdraw_feature.html', args)

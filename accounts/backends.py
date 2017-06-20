@@ -1,7 +1,8 @@
-from django.conf import settings
-from django.contrib.auth.hashers import check_password
+# from django.conf import settings
+# from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
+
 User = get_user_model()
 
 
@@ -24,9 +25,6 @@ class EmailAuth(object):
        Used by the django authentication system to retrieve an instance of User
        """
         try:
-            user = User.objects.get(pk=user_id)
-            if user.is_active:
-                return user
-            return None
+            return User.objects.get(pk=user_id)
         except User.DoesNotExist:
             return None

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Bug
+from .models import Bug, Feature
 
 
 class BugPostForm(forms.ModelForm):

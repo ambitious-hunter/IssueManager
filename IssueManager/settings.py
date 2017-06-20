@@ -26,9 +26,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SITE_ID = 2
+SITE_ID = 3
 
 AUTH_USER_MODEL = 'accounts.User'
+
+PAYPAL_TEST = True
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -131,6 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
@@ -140,7 +144,8 @@ DISQUS_API_KEY = '2eEsGL3BeREMdz2b10IMFltyadCvqHx0N56TStArCBbWWf5k8Kdtv4PxrdP4UB
 DISQUS_WEBSITE_SHORTNAME = 'IssueManager'
 
 # PayPal Settings
+PAYPAL_TEST = True
 SITE_URL = 'http://127.0.0.1:8000'
-PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+PAYPAL_NOTIFY_URL = 'http://127.0.0.1/bug/newftr/'
 PAYPAL_RECEIVER_EMAIL = '<anatarutina@hotmail.com>'
 
